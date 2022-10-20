@@ -4,10 +4,15 @@ import xlwings as xw
 # 定义个文件操作类
 class FileTable(object):
     def __init__(self, name, header,data,rows,cols):
+        #名称
         self.name = name
+        #表头
         self.header = header
+        #数据
         self.data = data
+        #数据行数量
         self.rows = rows
+        #数据列数量
         self.cols = cols
         
 
@@ -32,7 +37,7 @@ def get_table_datas(app,files,data_path):
             info = sheet.used_range
             nrows = info.last_cell.row
             ncols = info.last_cell.column
-            print("可用行:",nrows," 可用列",ncols)
+            print(file,"可用行:",nrows," 可用列",ncols)
             #获取第一行 表头数据数据
             a1_an_value = sheet.range((1,1),(1,ncols)).value
             #print("表头数据:",a1_an_value)
@@ -72,7 +77,7 @@ app.display_alerts = False
 #app.visible = False # 可以不显示excel界面，但会闪现一下 初始化设置将不会闪现
 tableDatas = get_table_datas(app=app,files=files,data_path=data_path)
 headerList = get_header_datas(tableDatas)
-print("表头合并后数据量:", len(headerList))
+print("表头合并后数据列数量:", len(headerList))
 
 #新建文档并写入表头
 sabeWb =app.books.add() 
