@@ -24,7 +24,8 @@ def get_table_datas(app,files,data_path):
     
     tableList = []
     for file in files:
-        if os.path.splitext(file)[-1] == ".xls":
+        fileExt = os.path.splitext(file)[-1]
+        if fileExt == ".xls" or fileExt == ".xlsx":
             xf = os.path.join(data_path,file)
             wb = app.books.open(xf)
             sheet = wb.sheets[0]

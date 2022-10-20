@@ -1,16 +1,16 @@
 # mergexls 
 
-这是一个合并多个xls文件到一个xls得python项目
-默认第一列为表头
-根据表头将文件合并到一起
-合并A.xls,B.xls如下:
+这是一个合并多个xls文件到一个xls得python项目   
+默认第一列为表头    
+根据表头将文件合并到一起  
+合并A.xls,B.xls如下:   
 A.xls 
 ``` 
 A	B	C
 A1	B1	C1
 A2	B2	C2
 ```
-B.xls
+B.xls 
 ```
 A	C	D
 A3	C3	D3
