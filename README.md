@@ -57,11 +57,13 @@ pip install xlwings
 运行mergexls.py
 ```
 python ./mergexls.py
-```
+```   
+
 运行成功后合并文件在data/save/merge.xls
 终端将输出运行结果如:
 ![运行结果](images/merge.jpeg)
 
+windows 系统下也可以双击运行 run.bat 
 ## License
 
 [MIT](https://github.com/RichardLitt/standard-readme/blob/master/LICENSE) © xiedaibin
