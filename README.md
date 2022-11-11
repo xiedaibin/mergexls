@@ -64,6 +64,8 @@ python ./mergexls.py
 ![运行结果](images/merge.jpeg)
 
 windows 系统下也可以双击运行 run.bat 
+
+windows 系统下不配置python环境可以运行打包好的exe文件 mergexls.exe 
 ## License
 
 [MIT](https://github.com/RichardLitt/standard-readme/blob/master/LICENSE) © xiedaibin

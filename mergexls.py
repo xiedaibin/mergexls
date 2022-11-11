@@ -1,4 +1,5 @@
 import os
+import sys
 import xlwings as xw
 
 # 定义个文件操作类
@@ -61,14 +62,16 @@ def get_header_datas(tableDatas):
     return headerList
 
 # main 主函数开始
-cpath,filename = os.path.split(os.path.abspath(__file__))
+cpath,filename = os.path.split(os.path.abspath(sys.argv[0]))
 
 print("执行文件目录:"+cpath+" 执行文件:"+filename)
 # 切换为测试数据 将data 改为 test 则会合并测试目录的数据
 data_path = os.path.join(cpath,"data")
 #data_path = os.path.join(cpath,"test")
 print("数据路径:"+data_path)
-   
+if not os.path.exists(data_path):
+    print("请在运行目录添加data目录,并将需要合并得文件保存至data目录下")
+    sys.exit()
 files = file_name_walk(data_path)
 print("需要处理得文件:", files)
 app = xw.App(visible=False,add_book=False)
@@ -118,4 +121,4 @@ sabeWb.save(saveFile)
 sabeWb.close()
 app.kill()
 print("合并完成,总数据量为:",totalData)
-
+input("Press Enter to exit…")
